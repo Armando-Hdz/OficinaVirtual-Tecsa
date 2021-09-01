@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" [routerLink]="['/']">
-    <img src="./assets/others/logotecsa.png" width="150">
+    <img src="./assets/others/logotecsa.png">
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -9,15 +9,20 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
       <li class="nav-item">
-        <a class="nav-link" href="#"> Iniciar Sesión </a>
+        <a class="nav-link" href="#"><img src="./assets/icons/perfil.png" class="icono">
+          Iniciar Sesión </a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['Mi Ofcina Virtual']"> Mi Ofcina Virtual </a>
+        <a class="nav-link" [routerLink]="['Mi Ofcina Virtual']">
+          <img src="./assets/icons/trabajar.png" class="icono">
+           Mi Oficina Virtual </a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="#"> Salir </a>
+        <a class="nav-link" href="#">
+          <img src="./assets/icons/cerrar-sesion.png" class="icono">
+          Salir </a>
       </li>
     </ul>
   </div>
