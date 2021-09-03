@@ -10,10 +10,87 @@ img{
 
 .icono{
     width: 50px;
+    margin-left: 30px;
     margin-right: 10px;
 }
 
 .nav-item{
     width: 32%;
     margin-left: 1%;
+}
+
+.list li a{
+    border-radius: 10px;
+}
+
+.list li a:hover{
+    background: #5c5f5b;
+    font-weight: bold;
+    color: white;
+    font-size:20px;
+    border-radius: 10px;
+  }
+
+  /* ************** Estilo Modo Tablet ******************** */
+@media (max-width:768px){ //Es el maximo de tamaño (los anteriores a ese tendran ese diseño)
+  
+  .navbar1{
+    margin-top: 15px;
+    margin-left: 10%;
+  }
+
+  .icono{
+    width: 50px;
+    margin-left: 30px;
+    margin-right: 10px;
+  }   
+
+  .nav-item{
+    width: 60%;
+    margin-left: 25%;
+}
+
+  .list li a:hover{
+    background: #5c5f5b;
+    font-weight: bold;
+    color: white;
+    font-size:15px;
+    border-radius: 10px;
+  }
+
+}
+
+/* ************** Estilo Modo Telefono ******************** */
+
+@media (max-width: 420px){
+
+    img{
+        width: 95px;
+        margin-left: 30%;
+    }
+
+    .navbar1{
+        margin-top: 15px;
+        margin-left: 10%;
+    }
+
+    .icono{
+        width: 35px;
+        margin-left: 30px;
+        margin-right: 10px;
+    }   
+
+    .nav-item{
+        width: 100%;
+        margin-left: 0%;
+    }
+
+    .list li a:hover{
+        background: #5c5f5b;
+        font-weight: bold;
+        color: white;
+        font-size:15px;
+        border-radius: 10px;
+    }
+
 }

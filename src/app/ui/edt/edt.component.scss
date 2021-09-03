@@ -1,3 +1,6 @@
+*{
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
 
 .example-list {
   width: 500px;
@@ -50,4 +53,48 @@
 
 input{
   padding: 20px, 10px;
+}
+/* ******************* Estilos de las tareas ************************** */
+
+p{
+  text-align: center;
+}
+
+.img1{
+  width: 35%;
+  margin-top: 15px;
+  margin-left: 35%;
+  margin-bottom: 15px;
+  //border-radius: 50%;
+}
+
+.img2{
+  width: 50px;
+  margin-left: 20%;
+  margin-right: 15px;
+}
+
+.container{
+  padding-bottom: 5%;
+}
+
+.tutorial{
+  width: 23%;
+  height: 140px;
+  //Estilos Fuera del Div
+  margin-top: 30px;
+  margin-left: 1.5%;
+  margin-bottom: 45px;
+  display: inline-table;
+  border-radius: 5px;
+  //Estilo dentro del Div (espacios dentro de este)
+  padding: 5px 5px 5px 5px;
+  color: white;
+  font-size: 15px;
+  //background: #7FB3D5; Hover
+  background: #2980B9;
+}
+
+.tutorial:hover{
+  background: #7FB3D5;
 }
