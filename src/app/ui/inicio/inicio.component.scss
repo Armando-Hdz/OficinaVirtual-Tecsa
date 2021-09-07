@@ -21,10 +21,21 @@ h1{
     margin-left: 15%;
     margin-bottom: 15px;
     border-radius: 50%;
+    // ANIMACIONES
+    position: relative;
+    animation-name: flotar;
+    animation-duration: 4s;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
 }
 
 .h3-1{
-    margin-left: 17.5%;
+    margin-left: 17%;
+    border: 3px solid #5DADE2;
+    border-radius: 10px;
+    padding: 5px;
+    width: 27%;
+    background: #D6EAF8;
 }
 
 .imagen2{
@@ -39,10 +50,22 @@ h1{
     margin-left: 50%;
     margin-bottom: 15px;
     border-radius: 50%;
+    // ANIMACIONES
+    position: relative;
+    animation-name: flotar;
+    animation-duration: 4s;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
 }
 
 .h3-2{
-    margin-left: 55%;
+    margin-left: 51%;
+    border: 3px solid #5DADE2;
+    border-radius: 10px;
+    padding: 5px;
+    width: 27%;
+    background: #D6EAF8;
+    text-align: center;
 }
 
 .imagen3{
@@ -57,8 +80,36 @@ h1{
     margin-left: 15%;
     margin-bottom: 15px;
     border-radius: 50%;
+    // ANIMACIONES
+    position: relative;
+    animation-name: flotar;
+    animation-duration: 4s;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
 }
 
 .h3-3{
-    margin-left: 17.5%;
+    margin-left: 17%;
+    border: 3px solid #5DADE2;
+    border-radius: 10px;
+    padding: 5px;
+    width: 27%;
+    background: #D6EAF8;
+    text-align: center;
+}
+
+/* ******************** ANIMACIONES DE IMAGENES *********************** */
+@keyframes flotar {
+    0%{
+        left: 0px;
+        top: 25px;
+    }
+    50%{
+        left: 0px;
+        top: 0px;
+    }
+    100%{
+        left: 0px;
+        top:25px
+    }
 }
