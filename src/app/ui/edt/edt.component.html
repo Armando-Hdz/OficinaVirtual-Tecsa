@@ -9,7 +9,7 @@
     <h2>1.</h2>
     <p class="p-tarjetas">Ingresa la Tarea que vas a desarrollar</p>
   </div>
-  <div class="tutorial">
+  <div class="tutorial1">
     <h2>2.</h2>
     <p class="p-tarjetas">Automaticamente se direccionan a la sección de "Para Hacer"</p>
   </div>
@@ -17,7 +17,7 @@
     <h2>3.</h2>
     <p class="p-tarjetas">Arrastra tu tarea de acuerdo al estatus en que se encuentra</p>
   </div>
-  <div class="tutorial">
+  <div class="tutorial1">
     <h2>4.</h2>
     <p class="p-tarjetas">Una vez que desplaces tu Tarea a "Terminado" ya no podrás moverla</p>
   </div>
@@ -38,13 +38,13 @@
       <h4><img src="./assets/icons/lista-de-tareas2.png" class="img2">Para hacer</h4>
       <div
         cdkDropList
-        class="example-list"
+        class="example-list1"
         id="todo-list"
         [cdkDropListData]="todo"
         [cdkDropListConnectedTo]="['progress-list']"
         (cdkDropListDropped)="drop($event)"
       >
-        <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
+        <div class="example-box1" *ngFor="let item of todo" cdkDrag>{{item}}</div>
       </div>
     </div>
 
@@ -52,13 +52,13 @@
       <h4><img src="./assets/icons/coordinador.png" class="img2">Trabajando</h4>
       <div
         cdkDropList
-        class="example-list"
+        class="example-list2"
         id="progress-list"
         [cdkDropListData]="progress"
         [cdkDropListConnectedTo]="['todo-list', 'checking-list']"
         (cdkDropListDropped)="drop($event)"
       >
-        <div class="example-box" *ngFor="let item of progress" cdkDrag>{{item}}</div>
+        <div class="example-box2" *ngFor="let item of progress" cdkDrag>{{item}}</div>
       </div>
     </div>
 
@@ -66,7 +66,7 @@
       <h4><img src="./assets/icons/trabajando2.png" class="img2">Revisando</h4>
       <div
         cdkDropList
-        class="example-list"
+        class="example-list3"
         id="checking-list"
         [cdkDropListData]="checking"
         [cdkDropListConnectedTo]="[
@@ -76,7 +76,7 @@
         ]"
         (cdkDropListDropped)="drop($event)"
       >
-        <div class="example-box" *ngFor="let item of checking" cdkDrag>{{item}}</div>
+        <div class="example-box3" *ngFor="let item of checking" cdkDrag>{{item}}</div>
       </div>
     </div>
 
@@ -84,12 +84,12 @@
       <h4><img src="./assets/icons/lista-de-tareas.png" class="img2">Terminado</h4>
       <div
         cdkDropList
-        class="example-list"
+        class="example-list4"
         id="done-list"
         [cdkDropListData]="done"
         (cdkDropListDropped)="drop($event)"
       >
-        <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
+        <div class="example-box4" *ngFor="let item of done" cdkDrag>{{item}}</div>
       </div>
     </div>
   </div>
