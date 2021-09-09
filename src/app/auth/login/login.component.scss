@@ -1,0 +1,53 @@
+*{
+	margin: 0px; 
+	padding: 0px; 
+	box-sizing: border-box;
+}
+
+body, html {
+	height: 100%;
+	font-family: Poppins-Regular, sans-serif;
+}
+
+
+input {
+	outline: none;
+	border: none;
+}
+
+button {
+	outline: none !important;
+	border: none;
+	background: transparent;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+/* ************************  contenedor del Login ************************** */
+
+.container-login {
+    width: 100%;  
+    min-height: 100vh;
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background: -webkit-linear-gradient(to right, #00dbde, #fc00ff);
+    background: linear-gradient(to right, #00dbde, #fc00ff);
+  }
+  
+  .wrap-login {
+    width: 400px;
+    background: #eceff1;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 77px 55px 53px 55px;
+    -webkit-box-shadow: 25px 40px 28px 0px rgba(0, 0, 0, 0.38);
+   /* box-shadow: eje-x | eje-y | blur-radius | color */
+  }
+
+  /* ************************  Formulario de user y password ************************** */

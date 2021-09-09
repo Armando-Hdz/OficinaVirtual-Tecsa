@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
+import { AuthModule } from './auth/auth.module';
 import { SharedModule } from './shared/shared.module';
 import { UiModule } from './ui/ui.module';
 
@@ -15,7 +16,8 @@ import { UiModule } from './ui/ui.module';
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-    UiModule
+    UiModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

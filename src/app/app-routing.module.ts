@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { InicioComponent } from './ui/inicio/inicio.component';
 import { EdtComponent } from './ui/edt/edt.component';
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
 
 const routes: Routes = [
   {
@@ -15,7 +17,15 @@ const routes: Routes = [
     component: InicioComponent
   },
   {
-    path: 'Mi Ofcina Virtual',
+    path: 'inicio-sesion',
+    component: LoginComponent
+  },
+  {
+    path: 'registro',
+    component: RegisterComponent
+  },
+  {
+    path: 'Mi Oficina Virtual',
     component: EdtComponent
   }
 ];
