@@ -3,7 +3,7 @@
     <div class="wrap-login">
         <form class="login-form validate-form" id="formLogin" action="" method="post">
             <span class="login-form-title">LOGIN</span>
-            
+            <img src="./assets/icons/iniciar-sesion.png">
             <div class="wrap-input100" data-validate = "Usuario incorrecto">
                 <input class="input100" type="text" id="usuario" name="usuario" placeholder="Usuario">
                 <span class="focus-efecto"></span>
@@ -20,6 +20,10 @@
                     <button type="submit" name="submit" class="login-form-btn">CONECTAR</button>
                 </div>
             </div>
+            <br>
+            <p>¿No tienes una cuenta?...</p>
+            <a class="nav-link" href="./auth/register/register.component"
+            [routerLink]="['registro']" >Registrate Aquí</a>
         </form>
     </div>
 </div>
