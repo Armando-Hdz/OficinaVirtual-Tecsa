@@ -1,0 +1,87 @@
+/* *********************************** IMAGENES ***************************** */
+:root {
+    --zero: #111B54;
+    --light: #ffffff;
+    --grey: #efefef;
+}
+
+body{
+    overflow: hidden;
+    font-family: 'Muli','sans-serif';
+    font-weight: 300;
+    color: var(--light)
+}
+
+.d-flex{
+    //border: 1px solid black;
+    width: 120.85%;
+    margin-left: -10.4%;
+}
+
+.sidebar-container{
+    width: 25%;
+    min-height: 100vh;
+    background: #111B54;
+}
+
+.logo{
+    padding: 20px;
+    text-align: center;
+}
+
+.menu{
+    width: 100%;
+}
+
+.icons{
+    margin: 5px;
+    margin-right: 10px;
+    width: 30px;
+}
+
+a{
+    //border: 1px solid white;
+    text-decoration: none;
+}
+
+a:hover{
+    background: #85C1E9;
+    border-radius: 5px;
+}
+
+.content{
+    border: 1px solid skyblue;
+    margin-left: 0%;
+    width: 75%;
+    padding: 20px;
+}
+
+.btn-primary{
+    background: #111B54;
+    border: none;
+    margin-left: 75%;
+    margin-top: -100px;
+}
+
+/******************* ESTILO TARJETAS DE DATOS *******************************/
+.container{
+    width: 100%;
+    //border: 1px solid black;
+}
+
+.card{
+    border: none;
+}
+
+.stat{
+    border: 1px solid #efefef;
+    margin: 5px;
+    padding: 10px;
+    
+}
+
+/******************* GRAFICAS  *******************************/
+
+.graficas{
+    width: 80%;
+}

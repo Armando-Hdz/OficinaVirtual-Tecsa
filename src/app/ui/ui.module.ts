@@ -5,22 +5,27 @@ import { EdtComponent } from './edt/edt.component';
 import { FormsModule } from '@angular/forms';
 
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { RouterModule } from '@angular/router';
 
 
 
 @NgModule({
   declarations: [
     InicioComponent,
-    EdtComponent
+    EdtComponent,
+    DashboardComponent
   ],
   imports: [
     CommonModule,
     DragDropModule,
-    FormsModule
+    FormsModule,
+    RouterModule
   ],
   exports: [
     InicioComponent,
-    EdtComponent
+    EdtComponent,
+    DashboardComponent
   ]
 })
 export class UiModule { }
