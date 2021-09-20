@@ -9,7 +9,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { RouterModule } from '@angular/router';
 
 
-
 @NgModule({
   declarations: [
     InicioComponent,
