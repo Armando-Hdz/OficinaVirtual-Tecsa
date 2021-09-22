@@ -7,7 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RouterModule } from '@angular/router';
-
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 @NgModule({
   declarations: [
@@ -19,12 +19,13 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     DragDropModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    NgxChartsModule
   ],
   exports: [
-    InicioComponent,
-    EdtComponent,
-    DashboardComponent
+    //InicioComponent,
+    //EdtComponent,
+    //DashboardComponent
   ]
 })
 export class UiModule { }
