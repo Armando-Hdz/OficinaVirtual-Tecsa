@@ -1,96 +1,49 @@
-<div class="container mt-5">
-  <div class="row">
-    <h1 class="text-center">BIENVENIDO A TU GESTOR DE TAREAS</h1>
-    <br>
-    <img src="./assets/icons/trabajando1.png" class="img1">
+<div class="row mt-3">
+  <div class="col-lg-6">
+    <h3>
+      Lista de Tareas
+    </h3>
   </div>
+  <div class="col-lg-6">
+    <button class="btn btn-primary float-end" routerLink="/agregar">
+      Nueva tarea
+    </button>
+  </div>
+</div>
 
-  <div class="tutorial">
-    <h2>1.</h2>
-    <p class="p-tarjetas">Ingresa la Tarea que vas a desarrollar</p>
-  </div>
-  <div class="tutorial1">
-    <h2>2.</h2>
-    <p class="p-tarjetas">Automaticamente se direccionan a la sección de "Para Hacer"</p>
-  </div>
-  <div class="tutorial">
-    <h2>3.</h2>
-    <p class="p-tarjetas">Arrastra tu tarea de acuerdo al estatus en que se encuentra</p>
-  </div>
-  <div class="tutorial1">
-    <h2>4.</h2>
-    <p class="p-tarjetas">Una vez que desplaces tu Tarea a "Terminado" ya no podrás moverla</p>
-  </div>
+<table *ngIf="listTask.length > 0" class="table table-hover mt-3">
+  <thead>
+    <tr>
+      <td>ID</td>
+      <td>TITULO</td>
+      <td>STATUS</td>
+      <td></td>
+      <td></td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let tasks of listTask">
+      <td>{{ tasks.Id_Work }}</td>
+      <td>
+        <a [routerLink]="['/ver', 1]">
+          {{ tasks.Title_Work }}
+        </a>
+      </td>
+      <td>{{ tasks.Status_Work }}</td>
+      <td>
+        <button class="btn btn-info btn-sm float-end">
+          Hacer
+        </button>
+      </td>
+      <td>
+        <button class="btn btn-danger btn-sm float-end">
+          Eliminar
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-  <div class="row">
-    <div class="col-lg-8 offset-lg-2 mb-4">
-      <input
-        type="text"
-        [(ngModel)]="task"
-        (keyup.enter)="addTask()"
-        class="form-control form-control-lg text-center"
-        placeholder="Ingresa una tarea">
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-lg-4">
-      <h4><img src="./assets/icons/lista-de-tareas2.png" class="img2">Para hacer</h4>
-      <div
-        cdkDropList
-        class="example-list1"
-        id="todo-list"
-        [cdkDropListData]="todo"
-        [cdkDropListConnectedTo]="['progress-list']"
-        (cdkDropListDropped)="drop($event)"
-      >
-        <div class="example-box1" *ngFor="let item of todo" cdkDrag>{{item}}</div>
-      </div>
-    </div>
-
-    <div class="col-lg-4">
-      <h4><img src="./assets/icons/coordinador.png" class="img2">Trabajando</h4>
-      <div
-        cdkDropList
-        class="example-list2"
-        id="progress-list"
-        [cdkDropListData]="progress"
-        [cdkDropListConnectedTo]="['todo-list', 'checking-list']"
-        (cdkDropListDropped)="drop($event)"
-      >
-        <div class="example-box2" *ngFor="let item of progress" cdkDrag>{{item}}</div>
-      </div>
-    </div>
-
-    <div class="col-lg-4">
-      <h4><img src="./assets/icons/trabajando2.png" class="img2">Revisando</h4>
-      <div
-        cdkDropList
-        class="example-list3"
-        id="checking-list"
-        [cdkDropListData]="checking"
-        [cdkDropListConnectedTo]="[
-          'todo-list',
-          'progress-list',
-          'done-list'
-        ]"
-        (cdkDropListDropped)="drop($event)"
-      >
-        <div class="example-box3" *ngFor="let item of checking" cdkDrag>{{item}}</div>
-      </div>
-    </div>
-
-    <div class="col-lg-4">
-      <h4><img src="./assets/icons/lista-de-tareas.png" class="img2">Terminado</h4>
-      <div
-        cdkDropList
-        class="example-list4"
-        id="done-list"
-        [cdkDropListData]="done"
-        (cdkDropListDropped)="drop($event)"
-      >
-        <div class="example-box4" *ngFor="let item of done" cdkDrag>{{item}}</div>
-      </div>
-    </div>
-  </div>
+<div *ngIf="listTask.length == 0" class="row mt-5">
+  <h5>No hay tareas a realizar</h5>
 </div>

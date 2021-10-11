@@ -1,0 +1,59 @@
+<h3 class="mt-3 text-center">AGREGAR TAREA</h3>
+
+<form [formGroup]="addTask" (ngSubmit)="addTaskDB()">
+  <div class="md-3">
+    <label for="titulo" class="form-label">
+      Titulo
+    </label>
+    <input formControlName="Title_Work" type="text" class="form-control" id="titulo" autocomplete="off">
+    <span *ngIf="addTask.get('Title_Work')?.invalid && addTask.get('Title_Work')?.touched" class="text-danger">
+      El <strong>titulo</strong> es requerido
+    </span>
+  </div>
+  <div class="md-3">
+    <label for="description" class="form-label">
+      Descripción de la tarea
+    </label>
+    <textarea formControlName="Description_Work" class="form-control" id="description" rows="8" autocomplete="off">
+    </textarea>
+    <span *ngIf="addTask.get('Description_Work')?.invalid && addTask.get('Description_Work')?.touched" class="text-danger">
+      La <strong>descripción</strong> es requerida
+    </span>
+  </div>
+  <div class="md-3">
+    <label for="status" class="form-label">
+      Status de la tarea
+    </label>
+    <br>
+    <select formControlName="Status_Work" name="status" id="status">
+      <option value="ToDo">A Realizar</option>
+      <option value="Working">Trabajando</option>
+      <option value="Checking">Revisando</option>
+      <option value="Done">Terminado</option>
+    </select>
+    <span *ngIf="addTask.get('Status_Work')?.invalid && addTask.get('Status_Work')?.touched" class="text-danger">
+      El <strong>status</strong> es requerido
+    </span>
+  </div>
+  <div class="md-3">
+    <label for="rol" class="form-label">
+      Departamento
+    </label>
+    <br>
+    <select formControlName="Id_Rol" name="rol" id="rol" *ngFor="let shRol of readRol">
+      <option>--- Selecciones Rol ---</option>
+      <option value="{{ shRol.Id_rol }}">{{ shRol.Name }}</option>
+    </select>
+    <span *ngIf="addTask.get('Id_Rol')?.invalid && addTask.get('Id_Rol')?.touched" class="text-danger">
+      El <strong>departamento</strong> es requerido
+    </span>
+  </div>
+  <br>
+  <button [disabled]="addTask.invalid" class="btn btn-primary float-end">
+    Aceptar
+  </button>
+  <button class="btn btn-secondary" routerLink="/Mi Oficina Virtual">
+    Volver
+  </button>
+  <br><br>
+</form>

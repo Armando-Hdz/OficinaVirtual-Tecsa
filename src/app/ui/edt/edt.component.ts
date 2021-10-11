@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { Working } from 'src/app/interfaces/working';
 
 @Component({
   selector: 'app-edt',
@@ -9,35 +8,32 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/dr
 })
 export class EdtComponent implements OnInit {
 
-  todo: string [] = [];
-  progress: string [] = [];
-  checking: string [] = [];
-  done: string [] = [];
-
-  task = '';
+  listTask: Working[] = [
+    {
+      Id_Work: 1,
+      Title_Work: 'Hola',
+      Description_Work: 'Decir Hola mundo',
+      Status_Work: 'To Do',
+      Id_Rol: 1
+    },
+    {
+      Id_Work: 1,
+      Title_Work: 'Hola',
+      Description_Work: 'Decir Hola mundo',
+      Status_Work: 'To Do',
+      Id_Rol: 1
+    },
+    {
+      Id_Work: 1,
+      Title_Work: 'Hola',
+      Description_Work: 'Decir Hola mundo',
+      Status_Work: 'To Do',
+      Id_Rol: 1
+    }
+  ]
 
   constructor() { }
 
   ngOnInit(): void {
-  }
-
-  drop(event: CdkDragDrop<string[]>) {
-    if (event.previousContainer === event.container) {
-      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
-    } else {
-      transferArrayItem(event.previousContainer.data,
-                        event.container.data,
-                        event.previousIndex,
-                        event.currentIndex);
-    }
-  }
-
-  addTask(){
-    if(this.task === ''){
-      return;
-    }
-
-    this.todo.push(this.task);
-    this.task = '';
   }
 }
