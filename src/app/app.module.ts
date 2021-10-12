@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
 import { SharedModule } from './shared/shared.module';
+import { StaffModule } from './staff/staff.module';
 import { UiModule } from './ui/ui.module';
 
 
@@ -18,7 +19,8 @@ import { UiModule } from './ui/ui.module';
     AppRoutingModule,
     SharedModule,
     UiModule,
-    AuthModule
+    AuthModule,
+    StaffModule
   ],
   providers: [],
   bootstrap: [AppComponent]

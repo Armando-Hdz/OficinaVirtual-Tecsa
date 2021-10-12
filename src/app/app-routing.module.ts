@@ -1,13 +1,14 @@
-import { NgModule, Component } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { InicioComponent } from './ui/inicio/inicio.component';
 import { EdtComponent } from './ui/edt/edt.component';
 import { LoginComponent } from './auth/login/login.component';
-import { RegisterComponent } from './auth/register/register.component';
 import { DashboardComponent } from './ui/dashboard/dashboard.component';
 import { CreateUpdateTaskComponent } from './ui/create-update-task/create-update-task.component';
 import { ReadTaskComponent } from './ui/read-task/read-task.component';
+import { StaffLoginComponent } from './staff/auth/staff-login/staff-login.component';
+import { StaffAddThingComponent } from './staff/staff-add-thing/staff-add-thing.component';
 
 const routes: Routes = [
   {
@@ -24,16 +25,8 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
-    path: 'registro',
-    component: RegisterComponent
-  },
-  {
     path: 'Mi Oficina Virtual',
     component: EdtComponent
-  },
-  {
-    path: 'dashboard',
-    component: DashboardComponent
   },
   {
     path: 'agregar',
@@ -46,6 +39,23 @@ const routes: Routes = [
   {
     path: 'ver/:id',
     component: ReadTaskComponent
+  },
+  {
+    path: 'staff',
+    redirectTo: 'staff/login',
+    pathMatch: 'full'
+  },
+  {
+    path: 'staff/login',
+    component: StaffLoginComponent
+  },
+  {
+    path: 'staff/dashboard',
+    component: DashboardComponent
+  },
+  {
+    path: 'staff/agregar',
+    component: StaffAddThingComponent
   }
 ];
 @NgModule({
