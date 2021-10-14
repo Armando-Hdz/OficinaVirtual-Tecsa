@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
   declarations: [
     StaffLoginComponent,
     StaffAddThingComponent
+  
   ],
   imports: [
     CommonModule,

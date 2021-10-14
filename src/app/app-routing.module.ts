@@ -9,6 +9,7 @@ import { CreateUpdateTaskComponent } from './ui/create-update-task/create-update
 import { ReadTaskComponent } from './ui/read-task/read-task.component';
 import { StaffLoginComponent } from './staff/auth/staff-login/staff-login.component';
 import { StaffAddThingComponent } from './staff/staff-add-thing/staff-add-thing.component';
+import { AddUserComponent } from './staff/add-update-data/add-user/add-user.component';
 
 const routes: Routes = [
   {
@@ -56,6 +57,10 @@ const routes: Routes = [
   {
     path: 'staff/agregar',
     component: StaffAddThingComponent
+  },
+  {
+    path: 'staff/agregarusuario',
+    component: AddUserComponent
   }
 ];
 @NgModule({
