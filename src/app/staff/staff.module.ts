@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { StaffLoginComponent } from './auth/staff-login/staff-login.component';
 import { StaffAddThingComponent } from './staff-add-thing/staff-add-thing.component';
 
+import { RouterModule } from '@angular/router';
+
 
 @NgModule({
   declarations: [
@@ -10,7 +12,8 @@ import { StaffAddThingComponent } from './staff-add-thing/staff-add-thing.compon
     StaffAddThingComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports:[
     StaffLoginComponent,

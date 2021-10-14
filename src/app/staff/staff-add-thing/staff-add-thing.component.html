@@ -1,4 +1,55 @@
-<p>staff-add-thing works!</p>
-<button class="btn btn-primary">
-  Agregar Usuario
-</button>
+<h1 class="text-center">Acciones Para Administrador</h1>
+<img src="./assets/icons/gerente.png" alt="" class="img-admin">
+
+<div class="div-opciones">
+
+  <div class="opciones">
+    <img src="./assets/icons/lista-de-tareas2.png" alt="" class="img-opciones">
+    <a routerLink="/agregar">
+      <button class="btn btn-primary">
+        Agregar Tarea
+      </button>
+    </a>  
+  </div>
+  <div class="opciones">
+    <img src="./assets/icons/trabajando4.png" alt="" class="img-opciones">
+    <a routerLink="/ver/:id">
+      <button class="btn btn-primary">
+        Ver Tareas
+      </button>
+    </a>
+  </div>
+  <div class="opciones">
+    <img src="./assets/icons/revisar-tarea.png" alt="" class="img-opciones">
+    <a routerLink="/Mi Oficina Virtual">
+      <button class="btn btn-primary">
+        Revisar Tarea
+      </button>
+    </a>
+  </div>
+  <div class="opciones">
+    <img src="./assets/icons/registro1.png" alt="" class="img-opciones">
+    <a routerLink="/staff/agregar">
+      <button class="btn btn-primary">
+        Ver Usuarios
+      </button>
+    </a>
+  </div>
+  <div class="opciones">
+    <img src="./assets/icons/agregar-usuario.png" alt="" class="img-opciones">
+    <a routerLink="/staff/agregar">
+      <button class="btn btn-primary">
+        Agregar Usuario
+      </button>
+    </a>
+  </div>
+  
+  
+</div>
+
+<a routerLink="/staff/dashboard">
+  <button class="btn btn-danger btn-final">
+    Regresar al Dashboard
+  </button>
+</a>
+
