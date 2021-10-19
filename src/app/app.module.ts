@@ -8,6 +8,7 @@ import { AuthModule } from './auth/auth.module';
 import { SharedModule } from './shared/shared.module';
 import { StaffModule } from './staff/staff.module';
 import { UiModule } from './ui/ui.module';
+import { AddUpdateDataModule } from './staff/add-update-data/add-update-data.module';
 
 
 @NgModule({
@@ -20,7 +21,7 @@ import { UiModule } from './ui/ui.module';
     SharedModule,
     UiModule,
     AuthModule,
-    StaffModule
+    StaffModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

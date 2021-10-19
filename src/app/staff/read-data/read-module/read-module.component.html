@@ -1,0 +1,26 @@
+<h1 class="text-center">Ver Módulos</h1>
+<br>
+<table class="table table-hidden">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre Modulo</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let modulos of readModule">
+            <td>{{modulos.Id_module}}</td>
+            <td>{{modulos.Name_module}}</td>
+            <td>
+                <button class="btn btn-info text-light">Modificar</button>
+            </td>
+            <td>
+                <button class="btn btn-danger text-light">Eliminar</button>
+            </td>
+        </tr>
+    </tbody>
+
+</table>
+

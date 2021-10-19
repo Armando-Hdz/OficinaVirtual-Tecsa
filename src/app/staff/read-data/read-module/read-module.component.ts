@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Module } from 'src/app/interfaces/module';
 
 @Component({
-  selector: 'app-add-module',
-  templateUrl: './add-module.component.html',
-  styleUrls: ['./add-module.component.scss']
+  selector: 'app-read-module',
+  templateUrl: './read-module.component.html',
+  styleUrls: ['./read-module.component.scss']
 })
-export class AddModuleComponent implements OnInit {
+export class ReadModuleComponent implements OnInit {
 
   readModule: Module[] = [
     {

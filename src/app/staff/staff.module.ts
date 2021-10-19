@@ -4,13 +4,15 @@ import { StaffLoginComponent } from './auth/staff-login/staff-login.component';
 import { StaffAddThingComponent } from './staff-add-thing/staff-add-thing.component';
 
 import { RouterModule } from '@angular/router';
+import { AddUpdateDataModule } from './add-update-data/add-update-data.module';
+import { ReadDataModule } from './read-data/read-data.module';
 
 
 @NgModule({
   declarations: [
     StaffLoginComponent,
-    StaffAddThingComponent
-  
+    StaffAddThingComponent,
+    
   ],
   imports: [
     CommonModule,
