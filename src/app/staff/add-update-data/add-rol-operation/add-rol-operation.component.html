@@ -1,1 +1,34 @@
-<p>add-rol-operation works!</p>
+<h1 class="text-center">Agregar Módulo</h1>
+<br>
+
+<form [formGroup]="addRolOperation" class="form-control" (ngSubmit)="addRolOperationDB()">
+    <label for="" class="form-label">Nombre del Módulo:</label>
+    <input type="text" formControlName="Title_Module" name="name-module" class="form-control" id="nombre" autocomplete="off">
+    <span *ngIf="addRolOperation.get('Title_Module')?.invalid && addRolOperation.get('Title_Module')?.touched" class="text-danger">
+      El <strong>nombre de módulo</strong> es requerido
+    </span>
+    <br>
+    <label for="" class="form-label">Nombre del Rol:</label>
+    <br>
+    <select formControlName="Id_rol" name="rol" id="rol" class="form-select">
+      <option *ngFor="let rols of readRol" value="{{rols.Id_rol}}">{{rols.Name}}</option>
+    </select>
+    <span *ngIf="addRolOperation.get('Id_rol')?.invalid && addRolOperation.get('Id_rol')?.touched" class="text-danger">
+      El <strong>rol</strong> es requerido
+    </span>
+    <br>
+    <label for="" class="form-label">Nombre de la operación:</label>
+    <br>
+    <select formControlName="Id_operation" name="operation" id="operation" class="form-select">
+      <option *ngFor="let operations of readOperation" value="{{operations.Id_operation}}">{{operations.Name_operation}}</option>
+    </select>
+    <span *ngIf="addRolOperation.get('Id_operation')?.invalid && addRolOperation.get('Id_operation')?.touched" class="text-danger">
+      La <strong>operacion</strong> es requerido
+    </span>
+    <br>
+    <button class="btn btn-danger" routerLink="/staff/agregar">Regresar</button>
+    <button type="submit" class="btn btn-primary float-end" [disabled]="addRolOperation.invalid">
+      Agregar
+    </button>
+
+</form>

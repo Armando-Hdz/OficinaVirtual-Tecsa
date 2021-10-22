@@ -1,1 +1,18 @@
-<p>add-rol works!</p>
+<h1 class="text-center">Agregar Rol</h1>
+<br>
+
+<form [formGroup]="addRol" class="form-control" (ngSubmit)="addRolDB()">
+    <label for="" class="form-label">Nombre del Rol:</label>
+    <input type="text" formControlName="Title_Rol" name="name-rol" class="form-control" id="nombre" autocomplete="off">
+    <span *ngIf="addRol.get('Title_Rol')?.invalid && addRol.get('Title_Rol')?.touched" class="text-danger">
+        El <strong>nombre de rol</strong> es requerido
+    </span>
+    
+    <br>
+    <br>
+    <button class="btn btn-danger" routerLink="/staff/agregar">Regresar</button>
+    <button type="submit" class="btn btn-primary float-end" [disabled]="addRol.invalid">
+      Agregar
+    </button>
+
+</form>

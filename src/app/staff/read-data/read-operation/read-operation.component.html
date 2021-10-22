@@ -1,1 +1,29 @@
-<p>read-operation works!</p>
+<h1 class="text-center">Ver Operaciones</h1>
+<br>
+<table class="table table-hidden">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>NOMBRE OPERACIÓN</th>
+            <th>ID MÓDULO</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let operation of readOperation">
+            <td>{{operation.Id_operation}}</td>
+            <td>{{operation.Name_operation}}</td>
+            <td>{{operation.Id_module}}</td>
+            <td>
+                <button class="btn btn-info text-light">Modificar</button>
+            </td>
+            <td>
+                <button class="btn btn-danger text-light">Eliminar</button>
+            </td>
+        </tr>
+    </tbody>
+
+</table>
+<br>
+<button class="btn btn-danger" routerLink="/staff/agregar">Regresar</button>

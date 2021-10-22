@@ -1,1 +1,29 @@
-<p>read-rol-operation works!</p>
+<h1 class="text-center">Ver Roles-Operaciones</h1>
+<br>
+<table class="table table-hidden">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>NOMBRE ROL</th>
+            <th>NOMBRE OPERACIÓN</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let rolope of readRolOperations">
+            <td>{{rolope.Id_up }}</td>
+            <td *ngFor="let rol of readRol">{{rol.Name}}</td>
+            <td *ngFor="let operation of readOperation">{{operation.Name_operation}}</td>
+            <td>
+                <button class="btn btn-info text-light">Modificar</button>
+            </td>
+            <td>
+                <button class="btn btn-danger text-light">Eliminar</button>
+            </td>
+        </tr>
+    </tbody>
+
+</table>
+<br>
+<button class="btn btn-danger" routerLink="/staff/agregar">Regresar</button>

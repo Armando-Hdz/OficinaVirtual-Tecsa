@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Module } from 'src/app/interfaces/module';
 
 @Component({
@@ -8,20 +9,27 @@ import { Module } from 'src/app/interfaces/module';
 })
 export class AddModuleComponent implements OnInit {
 
-  readModule: Module[] = [
-    {
-      Id_module: 1,
-      Name_module: 'ModuleOne'
-    },
-    {
-      Id_module: 2,
-      Name_module: 'ModuleTwo'
-    }
-  ]
+  addModule: FormGroup;
 
-  constructor() { }
+  constructor(private fb: FormBuilder) {
+    this.addModule = this.fb.group(
+      {
+        Title_Module: ['',Validators.required],
+      }
+    )
+   }
 
   ngOnInit(): void {
+  }
+
+  addModuleDB(){
+    console.log(this.addModule)
+    
+    const module: Module = {
+      Name_module: this.addModule.get('Title_Module')?.value
+    }
+  
+    console.log(module)
   }
 
 }

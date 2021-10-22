@@ -1,17 +1,33 @@
+.contenedor{
+    width: 100%;
+    display: flex;
+}
+
 .div-img{
     height: 450px;
     background-image: url('/assets/icons/add-user2.png');
     background-size: 100%;
     border-radius: 35px;
+    display: inline-table;
+    margin-top: 8%;
+    margin-left: 1%;
 }
 
 .img-user{
     width: 450px;
-    margin-left: 8%;
-    margin-top: 15%;
+    margin-top: 13%;
+}
+
+.div-form{
+    position: relative;
+    display: inline-table;
+    width: 50%;
+    margin-left: 5%;
+    margin-bottom: 50px;
 }
 
 button{
+    margin-top: 10px;
     margin-left: 40%;
     margin-bottom: 20px;
 }

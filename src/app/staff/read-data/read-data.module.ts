@@ -5,6 +5,7 @@ import { ReadOperationComponent } from './read-operation/read-operation.componen
 import { ReadRolComponent } from './read-rol/read-rol.component';
 import { ReadRolOperationComponent } from './read-rol-operation/read-rol-operation.component';
 import { ReadUserComponent } from './read-user/read-user.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -17,7 +18,8 @@ import { ReadUserComponent } from './read-user/read-user.component';
     ReadUserComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports:[
     ReadModuleComponent,

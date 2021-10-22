@@ -16,6 +16,10 @@ export class CreateUpdateTaskComponent implements OnInit {
     {
       Id_rol: 1,
       Name: 'Finanzas'
+    },
+    {
+      Id_rol: 2,
+      Name: 'Administracion'
     }
   ];
 

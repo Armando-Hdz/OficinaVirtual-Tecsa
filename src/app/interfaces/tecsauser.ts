@@ -1,8 +1,8 @@
-export interface Tecsauser {
-  Id_user: number;
-  Name_user: string;
-  Email_user: string;
-  Password_user: string;
-  Date_user: string;
-  Id_rol: number;
+export interface Tecsauser{
+    IdUser?: number;
+    NameUser: string;
+    EmailUser: string;
+    PasswordUser?: string;
+    DateUser: Date;
+    IdRol: number;
 }

@@ -40,9 +40,9 @@
       Departamento
     </label>
     <br>
-    <select formControlName="Id_Rol" name="rol" id="rol" *ngFor="let shRol of readRol">
-      <option>--- Selecciones Rol ---</option>
-      <option value="{{ shRol.Id_rol }}">{{ shRol.Name }}</option>
+    <select formControlName="Id_Rol" name="rol" id="rol" >
+      <option>--- Seleccione Rol ---</option>
+      <option *ngFor="let shRol of readRol" value="{{ shRol.Id_rol }}">{{ shRol.Name }}</option>
     </select>
     <span *ngIf="addTask.get('Id_Rol')?.invalid && addTask.get('Id_Rol')?.touched" class="text-danger">
       El <strong>departamento</strong> es requerido

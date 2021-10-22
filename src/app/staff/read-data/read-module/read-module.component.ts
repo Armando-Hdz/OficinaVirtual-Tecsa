@@ -17,7 +17,7 @@ export class ReadModuleComponent implements OnInit {
       Id_module: 2,
       Name_module: 'ModuleTwo'
     }
-  ]
+  ];
 
   constructor() { }
 

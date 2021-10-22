@@ -1,2 +1,27 @@
 <h1 class="text-center">Agregar Operación</h1>
+<br>
 
+<form [formGroup]="addOperation" class="form-control" (ngSubmit)="addOperationDB()">
+    <label for="" class="form-label">Nombre de la Operación:</label>
+
+    <input type="text" formControlName="Title_Operation" name="name-operation" class="form-control" id="nombre" autocomplete="off">
+    <span *ngIf="addOperation.get('Title_Operation')?.invalid && addOperation.get('Title_Operation')?.touched" class="text-danger">
+        El <strong>nombre de operación</strong> es requerido
+      </span>
+    <br>
+    <label for="" class="form-label">Nombre del Módulo:</label>
+    <br>
+    <select formControlName="Id_module" name="" id="" class="form-select" >
+      <option *ngFor="let modules of readModule" value="{{modules.Id_module}}">{{modules.Name_module}}</option>
+    </select>
+    <span *ngIf="addOperation.get('Id_module')?.invalid && addOperation.get('Id_module')?.touched" class="text-danger">
+      El <strong>departamento</strong> es requerido
+    </span>
+    <br>
+    <br>
+    <button class="btn btn-danger" routerLink="/staff/agregar">Regresar</button>
+    <button type="submit" class="btn btn-primary float-end" [disabled]="addOperation.invalid">
+      Agregar
+    </button>
+
+</form>

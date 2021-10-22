@@ -1,1 +1,27 @@
-<p>read-rol works!</p>
+<h1 class="text-center">Ver Roles</h1>
+<br>
+<table class="table table-hidden">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>NOMBRE ROL</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let modulos of readRol">
+            <td>{{modulos.Id_rol}}</td>
+            <td>{{modulos.Name}}</td>
+            <td>
+                <button class="btn btn-info text-light">Modificar</button>
+            </td>
+            <td>
+                <button class="btn btn-danger text-light">Eliminar</button>
+            </td>
+        </tr>
+    </tbody>
+
+</table>
+<br>
+<button class="btn btn-danger" routerLink="/staff/agregar">Regresar</button>

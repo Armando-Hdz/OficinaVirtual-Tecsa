@@ -1,35 +1,55 @@
-<section class="vh-100">
-    <div class="container py-5 h-100">
-      <div class="row d-flex align-items-center justify-content-center h-100">
-        <div class="col-md-8 col-lg-7 col-xl-6 div-img">
+        <div class="contenedor">
+        <div class=" div-img">
           <img src="./assets/icons/add-user1.png" alt="Agrega Usuario" class="img-user">
         </div>
-        <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1 div-form">
+        
+        <div class="div-form">
           <h1 class="text-center">Agregar Usuario</h1>
           <br>
-          <form>
+
+          <form class="form-control">
+            <!-- Nombre Input -->
+            <div class="form-outline mb-4">
+              <input formControlName="Nombre" type="name" id="name" class="form-control form-control-lg" autocomplete="off" />
+              <label class="form-label" for="email">Nombre(s) y Apellido</label>
+            </div>
+
             <!-- Email input -->
             <div class="form-outline mb-4">
-              <input type="email" id="form1Example13" class="form-control form-control-lg" autocomplete="off" />
+              <input formControlName="Correo" type="email" id="email" class="form-control form-control-lg" autocomplete="off" />
               <label class="form-label" for="form1Example13">Correo Electrónico</label>
             </div>
   
             <!-- Password input -->
             <div class="form-outline mb-4">
-              <input type="password" id="form1Example23" class="form-control form-control-lg" autocomplete="off"/>
+              <input formControlName="Password" type="password" id="password" class="form-control form-control-lg" autocomplete="off"/>
               <label class="form-label" for="form1Example23">Contraseña</label>
             </div>
 
             <!-- Confirm Password input -->
             <div class="form-outline mb-4">
-                <input type="password" id="form1Example23" class="form-control form-control-lg" autocomplete="off"/>
+                <input formControlName="Passwordconf" type="passwordconf" id="passwordconf" class="form-control form-control-lg" autocomplete="off"/>
                 <label class="form-label" for="form1Example23">Confirma Contraseña</label>
               </div>
+            <span class="text-success">
+                <b>La contraseña no coincide</b>.
+            </span>
+
+            <span class="text-success">
+                Recuerde que una vez que el usuario ingrese a su cuenta por primera 
+                vez, debe realizar el cambio de <b>contraseña</b>.
+            </span>
+            <br>
+            <!-- Select Departamento -->
+            <label class="form-label" for="modulo">Departamento</label>
+            <select formControlName="Id_module" name="Id_module" id="module" class="form-select">
+              <option *ngFor="let module of readModule" value="{{module.Id_module}}">{{module.Name_module}}</option>
+            </select>
   
-            <!-- Submit button -->
+            <!-- Submit button --> 
+            <br>
+            <button class="btn btn-danger" routerLink="/staff/agregar">Regresar</button>
             <button type="submit" class="btn btn-primary btn-lg btn-block ">Agregar</button>
           </form>
         </div>
       </div>
-    </div>
-  </section>
