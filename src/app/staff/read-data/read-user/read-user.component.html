@@ -1,7 +1,17 @@
 <h1 class="text-center">Ver Usuarios Conectados</h1>
-
+<br><br>
+<div class="contenedor">
+    <div class="usuarios" *ngFor="let user of readUser">
+        <img src="./assets/icons/ingeniero.png" alt="" class="img-usuarios">
+        <h5>{{user.NameUser}}</h5>
+        <p>{{user.EmailUser}}</p>
+        <h4>{{user.IdRol}}</h4>
+        <br>
+        <button class="btn btn-lg btn-info text-light">Ver Más</button>
+    </div>
+</div>
 
 
 
 <br>
-<button class="btn btn-danger" routerLink="/staff/agregar">Regresar</button>
+<button class="btn btn-danger btn-lg" routerLink="/staff/agregar">Regresar</button>

@@ -7,34 +7,43 @@
           <h1 class="text-center">Agregar Usuario</h1>
           <br>
 
-          <form class="form-control">
+          <form [formGroup]="addUser" class="form-control" (ngSubmit)="addUserDB()">
             <!-- Nombre Input -->
             <div class="form-outline mb-4">
               <input formControlName="Nombre" type="name" id="name" class="form-control form-control-lg" autocomplete="off" />
               <label class="form-label" for="email">Nombre(s) y Apellido</label>
             </div>
+            <p *ngIf="addUser.get('Nombre')?.invalid && addUser.get('Nombre')?.touched" class="text-danger">
+              <b>Se requiere el Nombre de Usuario</b>
+            </p>
 
             <!-- Email input -->
             <div class="form-outline mb-4">
               <input formControlName="Correo" type="email" id="email" class="form-control form-control-lg" autocomplete="off" />
               <label class="form-label" for="form1Example13">Correo Electrónico</label>
             </div>
+            <p *ngIf="addUser.get('Correo')?.invalid && addUser.get('Correo')?.touched" class="text-danger">
+              <b>Se requiere el Correo del Usuario</b>
+            </p>
   
             <!-- Password input -->
             <div class="form-outline mb-4">
-              <input formControlName="Password" type="password" id="password" class="form-control form-control-lg" autocomplete="off"/>
+              <input formControlName="Password" type="password" id="password" class="form-control form-control-lg" autocomplete="off" #password/>
               <label class="form-label" for="form1Example23">Contraseña</label>
             </div>
-
+            <p *ngIf="addUser.get('Password')?.invalid && addUser.get('Password')?.touched" class="text-danger">
+              <b>Se requiere una Contraseña</b>
+            </p>
             <!-- Confirm Password input -->
             <div class="form-outline mb-4">
-                <input formControlName="Passwordconf" type="passwordconf" id="passwordconf" class="form-control form-control-lg" autocomplete="off"/>
+                <input formControlName="Passwordconf" type="password" id="passwordconf" class="form-control form-control-lg" autocomplete="off" #passwordconf/>
                 <label class="form-label" for="form1Example23">Confirma Contraseña</label>
-              </div>
-            <span class="text-success">
-                <b>La contraseña no coincide</b>.
-            </span>
-
+            </div>
+            <p *ngIf="addUser.get('Passwordconf')?.invalid && addUser.get('Passwordconf')?.touched" class="text-danger">
+              <b>Se requiere la confirmación de Contraseña</b>
+            </p>
+            <p *ngIf="respuesta"><b>La contraseña no coincide</b></p>
+            <br>
             <span class="text-success">
                 Recuerde que una vez que el usuario ingrese a su cuenta por primera 
                 vez, debe realizar el cambio de <b>contraseña</b>.
@@ -42,14 +51,17 @@
             <br>
             <!-- Select Departamento -->
             <label class="form-label" for="modulo">Departamento</label>
-            <select formControlName="Id_module" name="Id_module" id="module" class="form-select">
+            <select formControlName="Id_module" name="Id_module" id="module" class="form-select" (focus)="validate_pass">
               <option *ngFor="let module of readModule" value="{{module.Id_module}}">{{module.Name_module}}</option>
             </select>
+            <p *ngIf="addUser.get('Id_module')?.invalid && addUser.get('Id_module')?.touched" class="text-danger">
+              <b>Se requiere el Nombre de Usuario</b>
+            </p>
   
             <!-- Submit button --> 
             <br>
-            <button class="btn btn-danger" routerLink="/staff/agregar">Regresar</button>
-            <button type="submit" class="btn btn-primary btn-lg btn-block ">Agregar</button>
+            <button class="btn btn-danger btn-lg" routerLink="/staff/agregar">Regresar</button>
+            <button type="submit" class="btn btn-primary btn-lg float-end" [disabled]="addUser.invalid">Agregar</button>
           </form>
         </div>
       </div>

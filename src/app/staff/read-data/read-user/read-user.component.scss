@@ -7,3 +7,32 @@ h1{
     border-radius: 10px;
     padding: 5px;
 }
+
+.contenedor{
+    width: 100%;
+}
+
+.usuarios{
+    width: 22%;
+    max-width: 22%;
+    min-height: 300px;
+    max-height: 330px;
+    border: 1px solid violet;
+    border-radius: 10px;
+    //background: rgba(128, 124, 124, 0.192);
+    margin: 1%;
+    padding: 5px;
+    text-align: center;
+
+    display: inline-table;
+}
+
+.img-usuarios{
+    width: 100px;
+}
+
+.btn-danger{
+    width: 30%;
+    margin-left: 35%;
+    margin-bottom: 20px;
+}
