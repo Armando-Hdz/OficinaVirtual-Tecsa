@@ -7,7 +7,27 @@
         <p>{{user.EmailUser}}</p>
         <h4>{{user.IdRol}}</h4>
         <br>
-        <button class="btn btn-lg btn-info text-light">Ver Más</button>
+        <button class="btn btn-lg btn-info text-light" (click)="showTask()">Ver Más</button>
+    </div>
+    <div class="mas" *ngIf="ver">
+        <table class="tareas table" >
+            <thead>
+                <tr>
+                    <th>Id Tarea</th>
+                    <th>Nombre de la Tarea</th>
+                    <th>Status de la Tarea</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let task of readTasks">
+                    <td>{{ task.Id_Work }}</td>
+                    <td>{{ task.Title_Work }}</td>
+                    <td>{{ task.Status_Work }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <button class="btn btn-lg btn-success text-light" (click)="hideTask()">Cerrar</button>
     </div>
 </div>
 

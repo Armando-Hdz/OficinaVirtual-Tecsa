@@ -28,31 +28,38 @@
   
             <!-- Password input -->
             <div class="form-outline mb-4">
-              <input formControlName="Password" type="password" id="password" class="form-control form-control-lg" autocomplete="off" #password/>
+              <input formControlName="Password" type="password" id="password" class="form-control
+               form-control-lg" autocomplete="off" [type]="hide ? 'password':'text'"/>
               <label class="form-label" for="form1Example23">Contraseña</label>
+
+              <img src="./assets/icons/staff-adduser-ver1.png" alt="Ver Contraseña" 
+              class="img-passw float-end" id="img-passw" (click)="hide = !hide" *ngIf="hide">
+
+              <img src="./assets/icons/staff-adduser-no-ver.png" alt="Ocultar Contraseña" 
+              class="img-passw float-end" id="img-passw" (click)="hide = true" *ngIf="!hide">
             </div>
             <p *ngIf="addUser.get('Password')?.invalid && addUser.get('Password')?.touched" class="text-danger">
               <b>Se requiere una Contraseña</b>
             </p>
-            <!-- Confirm Password input -->
+            <!-- Confirm Password input 
             <div class="form-outline mb-4">
-                <input formControlName="Passwordconf" type="password" id="passwordconf" class="form-control form-control-lg" autocomplete="off" #passwordconf/>
+                <input formControlName="Passwordconf" type="password" id="passwordconf" class="form-control form-control-lg" autocomplete="off" />
                 <label class="form-label" for="form1Example23">Confirma Contraseña</label>
             </div>
             <p *ngIf="addUser.get('Passwordconf')?.invalid && addUser.get('Passwordconf')?.touched" class="text-danger">
               <b>Se requiere la confirmación de Contraseña</b>
-            </p>
-            <p *ngIf="respuesta"><b>La contraseña no coincide</b></p>
-            <br>
-            <span class="text-success">
+            </p>-->
+            <!--<p ><b>La contraseña no coincide</b></p>-->
+            
+            <!--<span class="text-success">
                 Recuerde que una vez que el usuario ingrese a su cuenta por primera 
                 vez, debe realizar el cambio de <b>contraseña</b>.
-            </span>
+            </span> -->
             <br>
             <!-- Select Departamento -->
             <label class="form-label" for="modulo">Departamento</label>
-            <select formControlName="Id_module" name="Id_module" id="module" class="form-select" (focus)="validate_pass">
-              <option *ngFor="let module of readModule" value="{{module.Id_module}}">{{module.Name_module}}</option>
+            <select formControlName="Id_module" name="Id_module" id="module" class="form-select">
+              <option ng-disabled="disable" *ngFor="let module of readModule" value="{{module.Id_module}}">{{module.Name_module}}</option>
             </select>
             <p *ngIf="addUser.get('Id_module')?.invalid && addUser.get('Id_module')?.touched" class="text-danger">
               <b>Se requiere el Nombre de Usuario</b>

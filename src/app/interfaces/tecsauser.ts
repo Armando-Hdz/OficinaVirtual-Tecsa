@@ -3,6 +3,6 @@ export interface Tecsauser{
     NameUser: string;
     EmailUser: string;
     PasswordUser: string;
-    DateUser: Date;
+    DateUser: any;
     IdRol: number;
 }

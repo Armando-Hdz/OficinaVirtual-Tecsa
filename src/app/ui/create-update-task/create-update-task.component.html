@@ -25,11 +25,11 @@
       Status de la tarea
     </label>
     <br>
-    <select formControlName="Status_Work" name="status" id="status">
-      <option value="ToDo">A Realizar</option>
-      <option value="Working">Trabajando</option>
+    <select formControlName="Status_Work" name="status" id="status" [disabled]="true">
+      <option value="ToDo" disabled>A Realizar</option>
+      <!--<option value="Working">Trabajando</option>
       <option value="Checking">Revisando</option>
-      <option value="Done">Terminado</option>
+      <option value="Done">Terminado</option>-->
     </select>
     <span *ngIf="addTask.get('Status_Work')?.invalid && addTask.get('Status_Work')?.touched" class="text-danger">
       El <strong>status</strong> es requerido

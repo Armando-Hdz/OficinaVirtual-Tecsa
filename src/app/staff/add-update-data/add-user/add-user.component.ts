@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormsModule } from '@angular/forms';
 import { Module } from 'src/app/interfaces/module';
 import { Tecsauser } from 'src/app/interfaces/tecsauser';
 
@@ -12,14 +12,34 @@ import { Tecsauser } from 'src/app/interfaces/tecsauser';
 export class AddUserComponent implements OnInit {
 
   addUser: FormGroup;
+  
+  hide = true;
+  //fecha = [this.date.getFullYear,'-',this.date.getMonth,'-', this.date.getDay].toString;
 
-  password1: string = '';
-  password2: string = '';
-  respuesta: Boolean = false;
-  //fecha = [this.date.getFullYear,'-',this.date.getMonth,'-', this.date.getDay];
+  dates = new Date()
 
-  date = new Date();
+  /*anio = this.dates.getFullYear().toString;
+  mes= this.dates.getMonth().toString;
+  dia = this.dates.getDate().toString;
 
+  fechas: any = this.anio+'-'+this.mes+'-'+ this.anio*/
+  /*formatoFecha(date: Date, format: String) {
+    const map = {
+      dd: date.getDate(),
+      mm: date.getMonth() + 1,
+      yy: date.getFullYear().toString().slice(-2),
+      yyyy: date.getFullYear(),
+
+      //datecomplete: any = [dd,'-',mm'-',yyyy].toString
+    }  
+    //return format.replace(/yyyy|mm|dd|yy/gi, matched => map[matched])
+    return map
+  }*/
+  
+
+  
+
+// LEER MODULO --> DEPARTAMENTO
   readModule: Module[] = [
     {
       Id_module: 1,
@@ -31,7 +51,7 @@ export class AddUserComponent implements OnInit {
     }
   ];
 
-  constructor(private fb: FormBuilder /*public date: Date*/) { 
+  constructor(private fb: FormBuilder /*, public date: Date*/) { 
     this.addUser = this.fb.group(
       {
         Nombre: ['', Validators.required],
@@ -54,24 +74,6 @@ export class AddUserComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  validate_pass(pass1: string, pass2: string){
-    this.password1 = pass1;
-    this.password2 = pass2;
-    
-    //this.password1 = (<HTMLInputElement>document.getElementById('password')).value
-    //this.password2 = (<HTMLInputElement>document.getElementById('passwordconf')).value
-  
-    console.log(this.password1);
-    console.log(this.password2);
-    
-    if(this.password1 != this.password2){
-        this.respuesta = true
-        console.log('Esta es la respuesta de las contraseñas', this.respuesta)
-    }
-  
-
-  }
-
   addUserDB(){
     console.log(this.addUser)
 
@@ -79,12 +81,15 @@ export class AddUserComponent implements OnInit {
       NameUser: this.addUser.get('Nombre')?.value,
       EmailUser: this.addUser.get('Correo')?.value,
       PasswordUser: this.addUser.get('Password')?.value,
-      DateUser: this.date,
+      DateUser: this.dates,
       IdRol: this.addUser.get('Id_module')?.value
     }
 
     console.log(user);
+    console.log(this.dates)
   }
   
 
 }
+
+

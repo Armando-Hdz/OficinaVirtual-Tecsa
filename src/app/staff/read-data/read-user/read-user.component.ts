@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Tecsauser } from 'src/app/interfaces/tecsauser';
+import { Working } from 'src/app/interfaces/working'
 
 @Component({
   selector: 'app-read-user',
@@ -7,6 +8,8 @@ import { Tecsauser } from 'src/app/interfaces/tecsauser';
   styleUrls: ['./read-user.component.scss']
 })
 export class ReadUserComponent implements OnInit {
+
+  ver: boolean = false;
 
   readUser: Tecsauser [ ] = [
     {
@@ -42,6 +45,38 @@ export class ReadUserComponent implements OnInit {
       IdRol: 2
     }
   ];
+
+  readTasks: Working [] = [
+    {
+      Id_Work: 1,
+      Title_Work: 'Tarea 1',
+      Description_Work: 'Descripcion 1',
+      Status_Work: 'Trabajando',
+      Id_Rol: 1
+    },
+    {
+      Id_Work: 2,
+      Title_Work: 'Tarea 2',
+      Description_Work: 'Descripcion 2',
+      Status_Work: 'Trabajando',
+      Id_Rol: 1
+    },
+    {
+      Id_Work: 3,
+      Title_Work: 'Tarea 3',
+      Description_Work: 'Descripcion 3',
+      Status_Work: 'Terminado',
+      Id_Rol: 1
+    },
+  ];
+
+  showTask() {
+    this.ver = true;
+  }
+
+  hideTask(){
+    this.ver =false
+  }
 
   constructor() { }
 
