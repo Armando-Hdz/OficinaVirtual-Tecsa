@@ -6,17 +6,30 @@ import { StaffAddThingComponent } from './staff-add-thing/staff-add-thing.compon
 import { RouterModule } from '@angular/router';
 import { AddUpdateDataModule } from './add-update-data/add-update-data.module';
 import { ReadDataModule } from './read-data/read-data.module';
-
+import { ErrorTailorModule } from '@ngneat/error-tailor';
+import { invalid } from '@angular/compiler/src/render3/view/util';
 
 @NgModule({
   declarations: [
     StaffLoginComponent,
-    StaffAddThingComponent,
-    
+    StaffAddThingComponent
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule, 
+    AddUpdateDataModule,
+    ReadDataModule,
+
+    ErrorTailorModule.forRoot({
+      errors:{
+        useValue:{
+          required: 'El campo es requerido',
+          minlength: ({ requireLength, actualLength }) =>
+          'Expect ${requireLength} but got ${actualLength}',
+          invalidAddress: error => 'Direccion Incorrecta'
+        }
+      }  
+    })
   ],
   exports:[
     StaffLoginComponent,
