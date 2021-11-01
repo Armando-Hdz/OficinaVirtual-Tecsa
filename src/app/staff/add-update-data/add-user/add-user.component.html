@@ -1,6 +1,7 @@
         <div class="contenedor">
         <div class=" div-img">
           <img src="./assets/icons/add-user1.png" alt="Agrega Usuario" class="img-user">
+          <h1 *ngIf="respuesta" class="h1-img shadow">¡Usuario Agregado!</h1>
         </div>
         
         <div class="div-form">
@@ -29,8 +30,8 @@
             <!-- Password input -->
             <div class="form-outline mb-4">
               <input formControlName="Password" type="password" id="password" class="form-control
-               form-control-lg" autocomplete="off" [type]="hide ? 'password':'text'"/>
-              <label class="form-label" for="form1Example23">Contraseña</label>
+               form-control-lg" autocomplete="off" [type]="hide ? 'password':'text'" />
+              <label class="form-label" for="">Contraseña</label>
 
               <img src="./assets/icons/staff-adduser-ver1.png" alt="Ver Contraseña" 
               class="img-passw float-end" id="img-passw" (click)="hide = !hide" *ngIf="hide">
@@ -41,7 +42,10 @@
             <p *ngIf="addUser.get('Password')?.invalid && addUser.get('Password')?.touched" class="text-danger">
               <b>Se requiere una Contraseña</b>
             </p>
-            <!-- Confirm Password input 
+            <p *ngIf="" class="text-danger">
+              <b>El mínimo de caracteres es de 10</b>
+            </p>
+             <!--Confirm Password input 
             <div class="form-outline mb-4">
                 <input formControlName="Passwordconf" type="password" id="passwordconf" class="form-control form-control-lg" autocomplete="off" />
                 <label class="form-label" for="form1Example23">Confirma Contraseña</label>
@@ -62,7 +66,7 @@
               <option ng-disabled="disable" *ngFor="let module of readModule" value="{{module.Id_module}}">{{module.Name_module}}</option>
             </select>
             <p *ngIf="addUser.get('Id_module')?.invalid && addUser.get('Id_module')?.touched" class="text-danger">
-              <b>Se requiere el Nombre de Usuario</b>
+              <b>Se requiere el Departamento</b>
             </p>
   
             <!-- Submit button --> 
@@ -72,3 +76,12 @@
           </form>
         </div>
       </div>
+
+      <!--<ng-template let-error let-text="text" #messagePasswordError> 
+        <b>Error: </b>
+        <div *ngIf="error.minLength">
+          <i>No cumples con los Caracteres Mínimos</i>
+        </div>
+      </ng-template>
+
+      <ng-template let-error let-text="text" #mensajeError> {{ error | json }}{{ text }} </ng-template>-->

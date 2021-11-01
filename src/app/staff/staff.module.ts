@@ -6,8 +6,10 @@ import { StaffAddThingComponent } from './staff-add-thing/staff-add-thing.compon
 import { RouterModule } from '@angular/router';
 import { AddUpdateDataModule } from './add-update-data/add-update-data.module';
 import { ReadDataModule } from './read-data/read-data.module';
+
 import { ErrorTailorModule } from '@ngneat/error-tailor';
-import { invalid } from '@angular/compiler/src/render3/view/util';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -19,13 +21,16 @@ import { invalid } from '@angular/compiler/src/render3/view/util';
     RouterModule, 
     AddUpdateDataModule,
     ReadDataModule,
+    ReactiveFormsModule,
+    
+
 
     ErrorTailorModule.forRoot({
-      errors:{
+      errors: {
         useValue:{
           required: 'El campo es requerido',
-          minlength: ({ requireLength, actualLength }) =>
-          'Expect ${requireLength} but got ${actualLength}',
+          minlength: ({ requiredLength, actualLength }) =>
+          `Expect ${requiredLength} but got ${actualLength}`,
           invalidAddress: error => 'Direccion Incorrecta'
         }
       }  
@@ -33,7 +38,9 @@ import { invalid } from '@angular/compiler/src/render3/view/util';
   ],
   exports:[
     StaffLoginComponent,
-    StaffAddThingComponent
-  ]
+    StaffAddThingComponent,
+    AddUpdateDataModule,
+    ReadDataModule,
+  ],
 })
 export class StaffModule { }
