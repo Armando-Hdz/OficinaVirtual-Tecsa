@@ -1,7 +1,7 @@
         <div class="contenedor">
         <div class=" div-img">
           <img src="./assets/icons/add-user1.png" alt="Agrega Usuario" class="img-user">
-          <h1 *ngIf="respuesta" class="h1-img shadow">¡Usuario Agregado!</h1>
+          <!--<h1 *ngIf="respuesta" class="h1-img shadow">¡Usuario Agregado!</h1>-->
         </div>
         
         <div class="div-form">
@@ -20,7 +20,8 @@
 
             <!-- Email input -->
             <div class="form-outline mb-4">
-              <input formControlName="Correo" type="email" id="email" class="form-control form-control-lg" autocomplete="off" />
+              <input formControlName="Correo" type="email" id="email" class="form-control form-control-lg" 
+              autocomplete="off" #email (input)="checkemail(email)"/>
               <label class="form-label" for="form1Example13">Correo Electrónico</label>
             </div>
             <p *ngIf="addUser.get('Correo')?.invalid && addUser.get('Correo')?.touched" class="text-danger">
@@ -30,7 +31,7 @@
             <!-- Password input -->
             <div class="form-outline mb-4">
               <input formControlName="Password" type="password" id="password" class="form-control
-               form-control-lg" autocomplete="off" [type]="hide ? 'password':'text'" />
+               form-control-lg" autocomplete="off" [type]="hide ? 'password':'text'" (input)="validate($event)" />
               <label class="form-label" for="">Contraseña</label>
 
               <img src="./assets/icons/staff-adduser-ver1.png" alt="Ver Contraseña" 
@@ -39,12 +40,20 @@
               <img src="./assets/icons/staff-adduser-no-ver.png" alt="Ocultar Contraseña" 
               class="img-passw float-end" id="img-passw" (click)="hide = true" *ngIf="!hide">
             </div>
-            <p *ngIf="addUser.get('Password')?.invalid && addUser.get('Password')?.touched" class="text-danger">
+            <p *ngIf="addUser.get('Password')?.invalid && addUser.get('Password')?.touched 
+                && addUser.get('Password')?.value == 0"  class="text-danger">
               <b>Se requiere una Contraseña</b>
             </p>
-            <p *ngIf="" class="text-danger">
-              <b>El mínimo de caracteres es de 10</b>
+            <p *ngIf="answer" class="text-primary">
+                <b>El mínimo de caracteres es de 10</b>
             </p>
+            <p class="text-info text-justify p-recomend">
+              <b>Se recomienda el uso de Mayúsculas, Minúsculas, Números y Caracteres Especiales para una 
+                contraseña más segura
+              </b>
+            </p>
+            
+          
              <!--Confirm Password input 
             <div class="form-outline mb-4">
                 <input formControlName="Passwordconf" type="password" id="passwordconf" class="form-control form-control-lg" autocomplete="off" />
@@ -62,8 +71,8 @@
             <br>
             <!-- Select Departamento -->
             <label class="form-label" for="modulo">Departamento</label>
-            <select formControlName="Id_module" name="Id_module" id="module" class="form-select">
-              <option ng-disabled="disable" *ngFor="let module of readModule" value="{{module.Id_module}}">{{module.Name_module}}</option>
+            <select formControlName="Id_module" name="Id_module" id="module" class="form-select" >
+              <option *ngFor="let module of readModule" value="{{module.Id_module}}">{{module.Name_module}}</option>
             </select>
             <p *ngIf="addUser.get('Id_module')?.invalid && addUser.get('Id_module')?.touched" class="text-danger">
               <b>Se requiere el Departamento</b>

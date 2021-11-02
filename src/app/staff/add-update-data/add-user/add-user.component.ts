@@ -15,7 +15,11 @@ export class AddUserComponent implements OnInit {
   
   hide = true;
 
-  respuesta = false;
+  answer = false;
+  answer1 =false;
+  caracteres= '';
+  mail = '';
+  email = '';
 
 // LEER MODULO --> DEPARTAMENTO
   readModule: Module[] = [
@@ -60,12 +64,53 @@ export class AddUserComponent implements OnInit {
       IdRol: this.addUser.get('Id_module')?.value
     }
     
-    this.respuesta = true;
+    //this.respuesta1 = false;
     console.log(user);
     this.resetForm();
+    this.disable();
+    
   }
+
+  disable(){
+    setTimeout("alert('EL Usuario se ha Agregado')", 500);
+  }
+
+  validate(event: Event){
+    this.caracteres = (<HTMLInputElement>event.target).value
+    //console.log(this.caracteres)
+    if(this.caracteres.length > 0 && this.caracteres.length <10 ){
+      this.answer= true;
+    }
+    if (this.caracteres.length >= 10){
+      this.answer = false;
+    }
+  }
+
+  /*checkemail(event: Event){
+    this.mail = (<HTMLInputElement>event.target).value
+    var filter = /^\w+([\.-]?\w+)*@tecnicaencolectores.com.mx$/;
+    if (filter.test(this.mail)){
+        alert("Direccion de Correo valida");
+    }
+    else{
+      alert("Direccion invalida");
+    }
+  }*/
+
+  checkemail(mail:HTMLInputElement){
+    let check = mail.value
+    // nativa = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3,4})+$/
+    //var filter = /^\w+([\.-]?\w+)*@tecnicaencolectores.com.mx$/; 1
+    //let filter = /^[^@]+@[tecnicaencolectores.com]+\.[a-zA-Z]{2,} $/;2
+    // let bla = /[a-z]+/i\\/@\\/tecnicaencolectores\\/.com\\/.mx/ ---->MIO
+    //console.log(check);
+    /*if (filter.test(this.mail)){
+      alert("Direccion de Correo valida");
+    }
+    else{
+      alert("Direccion invalida");
+    }*/
+    }
   
 
 }
-
-
