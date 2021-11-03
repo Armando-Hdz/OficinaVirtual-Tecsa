@@ -21,17 +21,20 @@
             <!-- Email input -->
             <div class="form-outline mb-4">
               <input formControlName="Correo" type="email" id="email" class="form-control form-control-lg" 
-              autocomplete="off" #email (input)="checkemail(email)"/>
+              autocomplete="off" #emails (click)="checkemail(emails)"/>
               <label class="form-label" for="form1Example13">Correo Electrónico</label>
             </div>
             <p *ngIf="addUser.get('Correo')?.invalid && addUser.get('Correo')?.touched" class="text-danger">
               <b>Se requiere el Correo del Usuario</b>
             </p>
+            <p *ngIf="answer1" class="text-primary">
+              <b>El correo debe pertenecer al dominio "@tecnicaencolectores.com.mx"</b>
+            </p>
   
             <!-- Password input -->
             <div class="form-outline mb-4">
               <input formControlName="Password" type="password" id="password" class="form-control
-               form-control-lg" autocomplete="off" [type]="hide ? 'password':'text'" (input)="validate($event)" />
+               form-control-lg" autocomplete="off" [type]="hide ? 'password':'text'" (input)="validate($event)" (click)="checkemail(emails)"/>
               <label class="form-label" for="">Contraseña</label>
 
               <img src="./assets/icons/staff-adduser-ver1.png" alt="Ver Contraseña" 

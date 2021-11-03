@@ -18,8 +18,6 @@ export class AddUserComponent implements OnInit {
   answer = false;
   answer1 =false;
   caracteres= '';
-  mail = '';
-  email = '';
 
 // LEER MODULO --> DEPARTAMENTO
   readModule: Module[] = [
@@ -97,19 +95,23 @@ export class AddUserComponent implements OnInit {
     }
   }*/
 
-  checkemail(mail:HTMLInputElement){
-    let check = mail.value
+  checkemail(emails:HTMLInputElement){
+    let check = emails.value
     // nativa = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3,4})+$/
     //var filter = /^\w+([\.-]?\w+)*@tecnicaencolectores.com.mx$/; 1
     //let filter = /^[^@]+@[tecnicaencolectores.com]+\.[a-zA-Z]{2,} $/;2
     // let bla = /[a-z]+/i\\/@\\/tecnicaencolectores\\/.com\\/.mx/ ---->MIO
     //console.log(check);
-    /*if (filter.test(this.mail)){
-      alert("Direccion de Correo valida");
+    //https://www.youtube.com/watch?v=lvtL8KWpnBc
+    let intento1 = /^[A-Z-a-z-0-9-_]+@+[t]+[e]+[c]+[n]+[i]+[c]+[a]+[e]+[n]+[c]+[o]+[l]+[e]+[c]+[t]+[o]+[r]+[e]+[s]+.+[c]+[o]+[m]+.+[m]+[x]/
+    if (intento1.test(check)){
+      //alert("Direccion de Correo valida");
+      this.answer1 = false;
     }
     else{
-      alert("Direccion invalida");
-    }*/
+      //alert("Direccion invalida");
+      this.answer1 = true;
+    }
     }
   
 
