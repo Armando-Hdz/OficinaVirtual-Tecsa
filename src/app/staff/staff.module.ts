@@ -7,7 +7,6 @@ import { RouterModule } from '@angular/router';
 import { AddUpdateDataModule } from './add-update-data/add-update-data.module';
 import { ReadDataModule } from './read-data/read-data.module';
 
-import { ErrorTailorModule } from '@ngneat/error-tailor';
 import { ReactiveFormsModule } from '@angular/forms';
 
 
@@ -21,20 +20,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     RouterModule, 
     AddUpdateDataModule,
     ReadDataModule,
-    ReactiveFormsModule,
-    
-
-
-    ErrorTailorModule.forRoot({
-      errors: {
-        useValue:{
-          required: 'El campo es requerido',
-          minlength: ({ requiredLength, actualLength }) =>
-          `Expect ${requiredLength} but got ${actualLength}`,
-          invalidAddress: error => 'Direccion Incorrecta'
-        }
-      }  
-    })
+    ReactiveFormsModule
   ],
   exports:[
     StaffLoginComponent,

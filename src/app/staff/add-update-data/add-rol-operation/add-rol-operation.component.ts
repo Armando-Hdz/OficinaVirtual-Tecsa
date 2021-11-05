@@ -31,6 +31,7 @@ export class AddRolOperationComponent implements OnInit {
   constructor(private fb: FormBuilder) {
     this.addRolOperation = this.fb.group(
       {
+        Title_Module:['', Validators.required] ,
         Id_rol: [,Validators.required],
         Id_operation: [,Validators.required]
       }
