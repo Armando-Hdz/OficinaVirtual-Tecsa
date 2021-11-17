@@ -11,6 +11,7 @@ import { UiModule } from './ui/ui.module';
 //import { AddUpdateDataModule } from './staff/add-update-data/add-update-data.module';
 
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     UiModule,
     AuthModule,
     StaffModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

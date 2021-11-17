@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Working } from 'src/app/interfaces/working';
+import { TaskService } from 'src/app/services/task.service';
+import { Response } from 'src/app/interfaces/response/response';
 
 @Component({
   selector: 'app-edt',
@@ -8,32 +9,19 @@ import { Working } from 'src/app/interfaces/working';
 })
 export class EdtComponent implements OnInit {
 
-  listTask: Working[] = [
-    {
-      Id_Work: 1,
-      Title_Work: 'Hola',
-      Description_Work: 'Decir Hola mundo',
-      Status_Work: 'To Do',
-      Id_Rol: 1
-    },
-    {
-      Id_Work: 1,
-      Title_Work: 'Hola',
-      Description_Work: 'Decir Hola mundo',
-      Status_Work: 'To Do',
-      Id_Rol: 1
-    },
-    {
-      Id_Work: 1,
-      Title_Work: 'Hola',
-      Description_Work: 'Decir Hola mundo',
-      Status_Work: 'To Do',
-      Id_Rol: 1
-    }
-  ]
+  public lstTask: any[] = [];
 
-  constructor() { }
+  constructor(private tskService: TaskService) { }
 
   ngOnInit(): void {
+    this.getTask();
+  }
+
+  getTask() {
+    this.tskService.getTask().subscribe(
+      Response => {
+        this.lstTask = Response.data;
+      }
+    );
   }
 }

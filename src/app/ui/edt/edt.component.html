@@ -11,39 +11,29 @@
   </div>
 </div>
 
-<table *ngIf="listTask.length > 0" class="table table-hover mt-3">
+<table *ngIf="lstTask.length > 0" class="table table-hover mt-3">
   <thead>
     <tr>
-      <td>ID</td>
-      <td>TITULO</td>
-      <td>STATUS</td>
-      <td></td>
-      <td></td>
+      <td>Numero de Tarea</td>
+      <td>Folio de Tarea</td>
+      <td>Titulo</td>
+      <td>Status</td>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let tasks of listTask">
-      <td>{{ tasks.Id_Work }}</td>
+    <tr *ngFor="let tasks of lstTask; index as i">
+      <td>{{ i + 1 }}</td>
+      <td>{{ tasks.idWork }}</td>
       <td>
-        <a [routerLink]="['/ver', 1]">
-          {{ tasks.Title_Work }}
+        <a [routerLink]="['/ver', tasks.idWork]">
+          {{ tasks.titleWork }}
         </a>
       </td>
-      <td>{{ tasks.Status_Work }}</td>
-      <td>
-        <button class="btn btn-info btn-sm float-end">
-          Hacer
-        </button>
-      </td>
-      <td>
-        <button class="btn btn-danger btn-sm float-end">
-          Eliminar
-        </button>
-      </td>
+      <td>{{ tasks.statusWork }}</td>
     </tr>
   </tbody>
 </table>
 
-<div *ngIf="listTask.length == 0" class="row mt-5">
+<div *ngIf="lstTask.length == 0" class="row mt-5">
   <h5>No hay tareas a realizar</h5>
 </div>
