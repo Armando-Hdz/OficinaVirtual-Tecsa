@@ -92,7 +92,7 @@ const routes: Routes = [
     component: AddModuleComponent
   },
   {
-    path: 'staff/editaroperacion/:id', 
+    path: 'staff/editaroperacion/:id',
     component: AddOperationComponent
   },
   {
@@ -112,19 +112,19 @@ const routes: Routes = [
     component: ReadModuleComponent
   },
   {
-    path: 'staff/veroperacion/:id',
+    path: 'staff/veroperacion',
     component: ReadOperationComponent
   },
   {
-    path: 'staff/verrol/:id',
+    path: 'staff/verrol',
     component: ReadRolComponent
   },
   {
-    path: 'staff/verrol-operacion/:id',
+    path: 'staff/verrol-operacion',
     component: ReadRolOperationComponent
   },
   {
-    path: 'staff/verusuario/:id',
+    path: 'staff/verusuario',
     component: ReadUserComponent
   }
 ];

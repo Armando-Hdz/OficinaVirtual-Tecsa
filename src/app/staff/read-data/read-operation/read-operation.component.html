@@ -3,18 +3,20 @@
 <table class="table table-hidden">
     <thead>
         <tr>
+            <th>Numero</th>
             <th>ID</th>
             <th>NOMBRE OPERACIÓN</th>
-            <th>ID MÓDULO</th>
+            <th>MÓDULO</th>
             <th></th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let operation of readOperation">
-            <td>{{operation.Id_operation}}</td>
-            <td>{{operation.Name_operation}}</td>
-            <td>{{operation.Id_module}}</td>
+        <tr *ngFor="let operation of lstOperation; index as i">
+            <td>{{i+1}}</td>
+            <td>OPMOD - {{operation.idOperation}}</td>
+            <td>{{operation.nameOperation}}</td>
+            <td>{{operation.nameModule}}</td>
             <td>
                 <button class="btn btn-info text-light">Modificar</button>
             </td>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Rol } from 'src/app/interfaces/rol';
+import { ReadService } from '../service/read.service';
+import { Response } from 'src/app/interfaces/response/response';
 
 @Component({
   selector: 'app-read-rol',
@@ -8,16 +9,21 @@ import { Rol } from 'src/app/interfaces/rol';
 })
 export class ReadRolComponent implements OnInit {
 
-  readRol: Rol [] = [
-    {
-      Id_rol: 1,
-      Name: 'RolOne',
-    }
-  ];
+  public lstRol: any[] = [];
 
-  constructor() { }
+  constructor(
+    private srvRead: ReadService
+  ) { }
 
   ngOnInit(): void {
+    this.getRol();
   }
 
+  getRol(){
+    this.srvRead.getRol().subscribe(
+      Response => {
+        this.lstRol = Response.data;
+      }
+    );
+  }
 }

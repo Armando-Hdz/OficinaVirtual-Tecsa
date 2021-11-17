@@ -3,16 +3,18 @@
 <table class="table table-hidden">
     <thead>
         <tr>
-            <th>ID</th>
+            <td>Numero</td>
+            <th>Clave Identificadora</th>
             <th>NOMBRE MÓDULO</th>
             <th></th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let modulos of readModule">
-            <td>{{modulos.Id_module}}</td>
-            <td>{{modulos.Name_module}}</td>
+        <tr *ngFor="let modulos of lstModule; index as i">
+            <td>{{ i + 1 }}</td>
+            <td>MOD - {{modulos.idModule}}</td>
+            <td>{{modulos.nameModule}}</td>
             <td>
                 <button class="btn btn-info text-light">Modificar</button>
             </td>

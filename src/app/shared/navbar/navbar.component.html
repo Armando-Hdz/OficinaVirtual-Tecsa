@@ -3,8 +3,8 @@
     <a class="navbar-brand" [routerLink]="['/']">
       <img src="./assets/others/logotecsa.png">
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
-    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
     aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -27,6 +27,19 @@
           <a class="nav-link" [routerLink]="['inicio']">
             <img src="./assets/icons/cerrar-sesion.png" class="icono">
             Salir </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav link" [routerLink]="['/staff/login']">
+            Admin
+          </a>
+        </li>
+
+        <!-- Dashboard se va -->
+        <li class="nav-item">
+          <a class="nav link" [routerLink]="['/staff/dashboard']">
+            Dashboard
+          </a>
         </li>
       </ul>
     </div>

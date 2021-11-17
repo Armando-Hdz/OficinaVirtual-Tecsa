@@ -3,6 +3,7 @@
 <table class="table table-hidden">
     <thead>
         <tr>
+            <th>Numero</th>
             <th>ID</th>
             <th>NOMBRE ROL</th>
             <th></th>
@@ -10,9 +11,10 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let modulos of readRol">
-            <td>{{modulos.Id_rol}}</td>
-            <td>{{modulos.Name}}</td>
+        <tr *ngFor="let modulos of lstRol; index as i">
+            <td>{{ i + 1 }}</td>
+            <td>Rol - {{modulos.idRol}}</td>
+            <td>{{modulos.name}}</td>
             <td>
                 <button class="btn btn-info text-light">Modificar</button>
             </td>

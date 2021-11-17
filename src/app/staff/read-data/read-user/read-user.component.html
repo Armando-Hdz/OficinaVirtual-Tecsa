@@ -1,16 +1,17 @@
 <h1 class="text-center">Ver Usuarios Conectados</h1>
 <br><br>
 <div class="contenedor">
-    <div class="usuarios" *ngFor="let user of readUser">
+    <div class="usuarios" *ngFor="let user of lstUser">
         <img src="./assets/icons/ingeniero.png" alt="" class="img-usuarios">
-        <h5>{{user.NameUser}}</h5>
-        <p>{{user.EmailUser}}</p>
-        <h4>{{user.IdRol}}</h4>
+        <h5>User -  {{ user.idUser }}</h5>
+        <h5>{{user.nameUser}}</h5>
+        <p>{{user.emailUser}}</p>
+        <h4>{{user.name}}</h4>
         <br>
         <button class="btn btn-lg btn-info text-light" (click)="showTask()">Ver Más</button>
     </div>
     <div class="mas" *ngIf="ver">
-        <table class="tareas table" >
+<!--        <table class="tareas table" >
             <thead>
                 <tr>
                     <th>Id Tarea</th>
@@ -26,7 +27,7 @@
                 </tr>
             </tbody>
         </table>
-
+-->
         <button class="btn btn-lg btn-success text-light" (click)="hideTask()">Cerrar</button>
     </div>
 </div>

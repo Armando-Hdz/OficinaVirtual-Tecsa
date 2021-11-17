@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Module } from 'src/app/interfaces/module';
+import { ReadService } from '../service/read.service';
+import { Response } from 'src/app/interfaces/response/response';
 
 @Component({
   selector: 'app-read-module',
@@ -8,20 +9,20 @@ import { Module } from 'src/app/interfaces/module';
 })
 export class ReadModuleComponent implements OnInit {
 
-  readModule: Module[] = [
-    {
-      Id_module: 1,
-      Name_module: 'ModuleOne'
-    },
-    {
-      Id_module: 2,
-      Name_module: 'ModuleTwo'
-    }
-  ];
+  public lstModule: any[] = [];
 
-  constructor() { }
+  constructor(private srvRead: ReadService) { }
 
   ngOnInit(): void {
+    this.getModule();
+  }
+
+  getModule(){
+    this.srvRead.getModules().subscribe(
+      Response => {
+        this.lstModule = Response.data;
+      }
+    );
   }
 
 }
