@@ -3,6 +3,7 @@
 <table class="table table-hidden">
     <thead>
         <tr>
+            <th>NÚMERO</th>
             <th>ID</th>
             <th>NOMBRE ROL</th>
             <th>NOMBRE OPERACIÓN</th>
@@ -12,6 +13,7 @@
     </thead>
     <tbody>
         <tr *ngFor="let rolope of readRolOperations">
+            <td>vacio</td>
             <td>{{rolope.Id_up }}</td>
             <td *ngFor="let rol of readRol">{{rol.Name}}</td>
             <td *ngFor="let operation of readOperation">{{operation.Name_operation}}</td>
