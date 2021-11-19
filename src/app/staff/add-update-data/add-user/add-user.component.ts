@@ -55,11 +55,11 @@ export class AddUserComponent implements OnInit {
     console.log(this.addUser)
     
     const user: Tecsauser = {
-      NameUser: this.addUser.get('Nombre')?.value,
-      EmailUser: this.addUser.get('Correo')?.value,
-      PasswordUser: this.addUser.get('Password')?.value,
-      DateUser: '',
-      IdRol: this.addUser.get('Id_module')?.value
+      Name_user: this.addUser.get('Nombre')?.value,
+      Email_user: this.addUser.get('Correo')?.value,
+      Password_user: this.addUser.get('Password')?.value,
+      Date_user: '' ,
+      Id_rol: this.addUser.get('Id_module')?.value
     }
     
     //this.respuesta1 = false;

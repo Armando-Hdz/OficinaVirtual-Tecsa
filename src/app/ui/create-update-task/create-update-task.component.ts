@@ -42,12 +42,13 @@ export class CreateUpdateTaskComponent implements OnInit {
 
     const task: Working = {
       Title_Work: this.addTask.get('Title_Work')?.value,
-      Description_Work: this.addTask.get('Description_Work')?.value,
-      Status_Work: this.addTask.get('Status_Work')?.value,
+      Description_work: this.addTask.get('Description_Work')?.value,
+      Status_work: this.addTask.get('Status_Work')?.value,
       Id_Rol: this.addTask.get('Id_Rol')?.value
     }
 
     console.log(task);
   }
+  
 
 }
