@@ -1,3 +1,13 @@
+h1{
+    width: fit-content;
+    margin: auto;
+    margin-top: 20px;
+    border-top: 2px solid skyblue;
+    border-bottom: 2px solid violet;
+    border-radius: 10px;
+    padding: 5px;
+  }
+
 .contenedor{
     width: 100%;
     display: flex;
@@ -44,7 +54,24 @@
     text-align: justify;
 }
 
+form{
+    padding: 30px;
+    background: #48c9af80;
+    border-radius: 10px;
+    border: 1px solid #48c9af;
+}
+
+label{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-bottom: -10px;
+  }
+
+
 button{
     margin-top: 10px;
     margin-bottom: 20px;
 }
+
+input, select{
+    border: 1px solid #48c9af;
+  }

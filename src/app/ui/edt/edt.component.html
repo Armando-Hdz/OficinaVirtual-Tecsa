@@ -14,10 +14,10 @@
 <table *ngIf="lstTask.length > 0" class="table table-hover mt-3">
   <thead>
     <tr>
-      <td>Numero de Tarea</td>
-      <td>Folio de Tarea</td>
-      <td>Titulo</td>
-      <td>Status</td>
+      <td>NÚMERO DE TAREA</td>
+      <td>FOLIO DE TAREA</td>
+      <td>TÍTULO</td>
+      <td>STATUS</td>
     </tr>
   </thead>
   <tbody>
@@ -37,3 +37,7 @@
 <div *ngIf="lstTask.length == 0" class="row mt-5">
   <h5>No hay tareas a realizar</h5>
 </div>
+<br>
+<button class="btn btn-danger" routerLink="/staff/agregar">
+  Regresar
+</button>

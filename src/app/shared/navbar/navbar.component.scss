@@ -10,13 +10,13 @@ img{
 
 .icono{
     width: 50px;
-    margin-left: 30px;
-    margin-right: 10px;
+    margin-right: 40px;
 }
 
 .nav-item{
     width: 32%;
     margin-left: 1%;
+    text-align: center;
 }
 
 .list li a{
@@ -27,7 +27,7 @@ img{
     background: #5c5f5b;
     font-weight: bold;
     color: white;
-    font-size:20px;
+    font-size:18px;
     border-radius: 10px;
   }
 
@@ -46,11 +46,12 @@ img{
   }   
 
   .nav-item{
-    width: 60%;
-    margin-left: 25%;
+    width: 80%;
+    margin-left: 30%;
 }
 
   .list li a:hover{
+    width: 300px;
     background: #5c5f5b;
     font-weight: bold;
     color: white;

@@ -1,18 +1,18 @@
-<h3 class="mt-3 text-center">AGREGAR TAREA</h3>
+<h1 class="text-center">AGREGAR TAREA</h1>
 
-<form [formGroup]="addTask" (ngSubmit)="addTaskDB()">
+<form [formGroup]="addTask" class="form-control" (ngSubmit)="addTaskDB()">
   <div class="md-3">
     <label for="titulo" class="form-label">
-      Titulo
+      Título:
     </label>
     <input formControlName="Title_Work" type="text" class="form-control" id="titulo" autocomplete="off">
     <span *ngIf="addTask.get('Title_Work')?.invalid && addTask.get('Title_Work')?.touched" class="text-danger">
-      El <strong>titulo</strong> es requerido
+      El <strong>título</strong> es requerido
     </span>
   </div>
   <div class="md-3">
     <label for="description" class="form-label">
-      Descripción de la tarea
+      Descripción de la Tarea:
     </label>
     <textarea formControlName="Description_Work" class="form-control" id="description" rows="8" autocomplete="off">
     </textarea>
@@ -22,10 +22,10 @@
   </div>
   <div class="md-3">
     <label for="status" class="form-label">
-      Status de la tarea
+      Status de la Tarea:
     </label>
     <br>
-    <select formControlName="Status_Work" name="status" id="status" [disabled]="true">
+    <select formControlName="Status_Work" name="status" id="status" [disabled]="true" class="form-select">
       <option value="ToDo" disabled>A Realizar</option>
       <!--<option value="Working">Trabajando</option>
       <option value="Checking">Revisando</option>
@@ -37,10 +37,10 @@
   </div>
   <div class="md-3">
     <label for="rol" class="form-label">
-      Departamento
+      Departamento:
     </label>
     <br>
-    <select formControlName="Id_Rol" name="rol" id="rol" >
+    <select formControlName="Id_Rol" name="rol" id="rol"  class="form-select" >
       <option>--- Seleccione Rol ---</option>
       <option *ngFor="let shRol of readRol" value="{{ shRol.Id_rol }}">{{ shRol.Name }}</option>
     </select>
@@ -52,8 +52,8 @@
   <button [disabled]="addTask.invalid" class="btn btn-primary float-end">
     Aceptar
   </button>
-  <button class="btn btn-secondary" routerLink="/staff/agregar">
-    Volver
+  <button class="btn btn-danger" routerLink="/staff/agregar">
+    Regresar
   </button>
   <br><br>
 </form>
