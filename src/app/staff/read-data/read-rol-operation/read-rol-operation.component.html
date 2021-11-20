@@ -7,16 +7,18 @@
             <th>CLAVE ROL-OPERACI</th>
             <th>NOMBRE ROL</th>
             <th>NOMBRE OPERACIÓN</th>
+            <th>NOMBRE MODULO</th>
             <th></th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let rolope of readRolOperations">
-            <td>vacio</td>
-            <td>{{rolope.Id_up }}</td>
-            <td *ngFor="let rol of readRol">{{rol.Name}}</td>
-            <td *ngFor="let operation of readOperation">{{operation.Name_operation}}</td>
+        <tr *ngFor="let rolope of lstRolOperation; index as i">
+            <td>{{ i + 1 }}</td>
+            <td>{{rolope.IdUp }}</td>
+            <td>{{ rolope.Name }}</td>
+            <td>{{ rolope.NameOperation }}</td>
+            <td>{{ rolope.NameModule }}</td>
             <td>
                 <button class="btn btn-info text-light">Modificar</button>
             </td>

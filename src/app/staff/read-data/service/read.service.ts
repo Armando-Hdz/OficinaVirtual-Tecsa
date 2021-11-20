@@ -12,7 +12,7 @@ export class ReadService {
   private myMethodModule: string = '/api/getmethods/Module';
   private myMethodOperation: string = '/api/getmethods/OpeationModule';
   private myMethodRol: string = '/api/getmethods/Rol';
-//  private myMethodRolOperation: string = '';
+  private myMethodRolOperation: string = '/api/getmethods/RolOperationModule';
   private myMethodUser: string = '/api/getmethods/Users';
 
   constructor(
@@ -31,7 +31,9 @@ export class ReadService {
     return this.http.get<Response>(this.myApi + this.myMethodRol);
   }
 
-  //RolOperation method
+  getRolOperation(): Observable<Response>{
+    return this.http.get<Response>(this.myApi + this.myMethodRolOperation);
+  }
 
   getUser(): Observable<Response>{
     return this.http.get<Response>(this.myApi + this.myMethodUser);

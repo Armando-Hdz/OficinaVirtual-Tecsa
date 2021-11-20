@@ -12,7 +12,7 @@
     <label for="" class="form-label">Nombre del Módulo:</label>
     <br>
     <select formControlName="Id_module" name="" id="" class="form-select" >
-      <option *ngFor="let modules of readModule" value="{{modules.Id_module}}">{{modules.Name_module}}</option>
+      <option *ngFor="let modules of readModule" value="{{modules.idModule}}">{{modules.nameModule}}</option>
     </select>
     <span *ngIf="addOperation.get('Id_module')?.invalid && addOperation.get('Id_module')?.touched" class="text-danger">
       El <strong>departamento</strong> es requerido

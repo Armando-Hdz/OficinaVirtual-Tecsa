@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Operation } from 'src/app/interfaces/operation';
-import { Rol } from 'src/app/interfaces/rol';
-import { Roloperation } from 'src/app/interfaces/roloperation';
+import { ReadService } from '../service/read.service';
+import { Response } from 'src/app/interfaces/response/response';
 
 @Component({
   selector: 'app-read-rol-operation',
@@ -10,32 +9,21 @@ import { Roloperation } from 'src/app/interfaces/roloperation';
 })
 export class ReadRolOperationComponent implements OnInit {
 
-  readRolOperations: Roloperation [] = [
-    {
-      Id_up: 1,
-      Id_rol: 1,
-      Id_operation: 1
-    }
-  ];
+  public lstRolOperation: any[] = [];
 
-  readOperation: Operation [] = [
-    {
-      Id_operation: 1,
-      Name_operation: 'OperacionOne',
-      Id_module: 1
-    }
-  ];
-
-  readRol: Rol [] = [
-    {
-      Id_rol: 1,
-      Name: 'RolOne',
-    }
-  ];
-
-  constructor() { }
+  constructor(
+    private readService: ReadService
+  ) { }
 
   ngOnInit(): void {
+    this.getRolOperation();
   }
 
+  getRolOperation(){
+    this.readService.getRolOperation().subscribe(
+      Response => {
+        this.lstRolOperation = Response.data;
+      }
+    );
+  }
 }
