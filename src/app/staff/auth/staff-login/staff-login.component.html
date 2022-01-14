@@ -20,8 +20,14 @@
 
           <!-- Password input -->
           <div class="form-outline mb-4">
-            <input type="password" id="form1Example23" class="form-control form-control-lg" formControlName="password" autocomplete="off"/>
+            <input type="password" id="form1Example23" class="form-control form-control-lg" formControlName="password"
+            [type]="hide ? 'password':'text'" autocomplete="off"/>
             <label class="form-label" for="form1Example23">Contraseña</label>
+            <img src="./assets/icons/staff-adduser-ver1.png" alt="Ver Contraseña" 
+              class="img-passw float-end" id="img-passw" (click)="hide = !hide" *ngIf="hide">
+
+              <img src="./assets/icons/staff-adduser-no-ver.png" alt="Ocultar Contraseña" 
+              class="img-passw float-end" id="img-passw" (click)="hide = true" *ngIf="!hide">
             <br>
             <span *ngIf="login.get('password')?.invalid && login.get('password')?.touched" class="text-warning">
               La <strong>contraseña</strong> es requerida

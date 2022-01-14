@@ -10,10 +10,12 @@ export class StaffLoginComponent implements OnInit {
 
   login: FormGroup;
 
+  hide = true;
+
   constructor(private fb: FormBuilder) { 
     this.login = this.fb.group(
       {
-        email: ['',Validators.required],
+        email: ['',[Validators.required, Validators.email]],
         password: ['', Validators.required] ,
       }
     );
